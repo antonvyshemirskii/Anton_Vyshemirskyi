@@ -9,60 +9,60 @@ namespace WebApiFeature.Features
     [Binding]
     public class WebApiSteps
     {
-        // Dropbox uploader class
-        DropboxUploader dbu = new DropboxUploader();
+        
+        DbUpload dbUpload = new DbUpload();
 
         [Given(@"check file exists on pc")]
         public void GivenCheckFileExistsOnPc()
         {
-            dbu.CheckFileExist();
+            dbUpload.IsFileExist();
         }
 
         [When(@"upload file")]
         public void WhenUploadFile()
         {
-            dbu.UploadFile();
+            dbUpload.UploadFile();
         }
 
         [Then(@"show success message")]
         public void ThenShowSuccessMessage()
         {
-            dbu.ShowSuccessMessage();
+            dbUpload.ShowSuccessMessage();
         }
 
 
-        // Get file metadata
-        DropboxFileMetadata dfm = new DropboxFileMetadata();
+        
+        DbMetaData dbMeta = new DbMetaData();
         [Given(@"file exists on Dropbox")]
         public void GivenFileExistsOnDropbox()
         {
-            dfm.CheckFileExist();
+            dbMeta.IsFileExist();
         }
         
         [When(@"get file metada")]
         public void WhenGetFileMetada()
         {
-            dfm.GetFileMetadata();
+            dbMeta.GetFileMetaData();
         }
 
         [Then(@"show file metada")]
         public void ThenShowFileMetada()
         {
-            dfm.ShowSuccessMessage();
+            dbMeta.ShowSuccessMessage();
         }
 
-        // Delete file
-        DropboxFileDeleter dfd = new DropboxFileDeleter();
+        
+        DbDelete dbDelete = new DbDelete();
         [When(@"delete file")]
         public void WhenDeleteFile()
         {
-            dfd.DeleteFile();
+            dbDelete.DeleteFile();
         }
         
         [Then(@"show delete success message")]
         public void ThenShowDeleteSuccessMessage()
         {
-            dfd.ShowSuccessMessage();
+            dbDelete.ShowSuccessMessage();
         }
     }
 }
