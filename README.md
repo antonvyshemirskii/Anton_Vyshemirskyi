@@ -1,4 +1,4 @@
-#1.Clone my repository
+1.Clone my repository
 2.my token should work but if not follow next:
  2.1 create Dropbox app
  2.2 Give Permission for files.metadata.write, files.content.write, files.content.read(click submit)
